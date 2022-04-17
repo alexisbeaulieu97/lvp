@@ -1,32 +1,21 @@
-import './App.css';
 import NavBar from './NavBar';
-import { Box } from '@mui/system';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { darkTheme } from './themes';
+import { Box } from '@mui/material';
 
-const theme = createTheme({
-  palette: {
-    background: {
-      paper: '#000000',
-    },
-    text: {
-      primary: '#173A5E',
-      secondary: '#46505A',
-    },
-    action: {
-      active: '#001E3C',
-    },
-    success: {
-      main: "#009688",
-      dark: '#009688',
-    },
-  },
-});
-
+const theme = createTheme(darkTheme);
+console.log(theme);
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Box>
+      <Box
+        sx={{
+          height: '100vh',
+          width: '100vw',
+          backgroundColor: 'background.default'
+        }}
+      >
         <NavBar></NavBar>
       </Box>
     </ThemeProvider>
